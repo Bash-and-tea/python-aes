@@ -287,11 +287,13 @@ class AESModeOfOperationCTR(AESStreamModeOfOperation):
         return self.encrypt(crypttext)
 
 def main():
+    # Cryptographically secure (pseudo)random key
     key = os.urandom(32)
-    # key = list('idontevenknowrfn')
+    # New encryption object
     aes = AESModeOfOperationCTR(key)
     plaintext = "Finite fields in Rijndael-AES encryption are pretty rad!"
     ciphertext = aes.encrypt(plaintext)
+    # Hex notation of the encrypted text
     print(repr(ciphertext))
 
     # The counter mode of operation maintains state, so decryption requires
@@ -299,6 +301,8 @@ def main():
     aes = AESModeOfOperationCTR(key)
     decrypted = aes.decrypt(ciphertext)
 
+    # String Representation of decrypted text
+    print(decrypted)
     # True
     print(decrypted == plaintext)
 
