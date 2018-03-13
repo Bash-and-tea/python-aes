@@ -240,7 +240,7 @@ class AESModeOfOperationCTR(AESStreamModeOfOperation):
        o The counter must be the same size as the key size (ie. len(key))
        o Each block independant of the other, so a corrupt byte will not
          damage future blocks.
-       o Each block has a uniue counter value associated with it, which
+       o Each block has a unique counter value associated with it, which
          contributes to the encrypted value, so no data patterns are
          leaked.
        o Also known as: Counter Mode (CM), Integer Counter Mode (ICM) and
